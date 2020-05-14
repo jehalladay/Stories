@@ -70,6 +70,9 @@ const SimpleBarChart = (props) => {
 
 	return (
 		<Fragment >
+            <div ref={chartArea}>
+
+            </div>
 			<svg ref = {chartArea} style={{height: height, width: width,paddingLeft: '3px', backgroundColor: 'white', borderRadius:'2px'}}>
 
 			</svg>

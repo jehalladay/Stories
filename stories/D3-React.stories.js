@@ -2,7 +2,10 @@ import React, { Component, Fragment, useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3'
 import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
-import {SimpleBarChart} from '../jsx/src/simple-bar-chart.jsx'
+import {SimpleBarChart} from '../jsx/src/simple-bar-chart2.jsx'
+import {BarChart} from '../jsx/src/barchart-widget.jsx'
+import {ReactClassExample} from '../jsx/src/react-class.jsx'
+import {ReactFunctionExample} from '../jsx/src/react-function.jsx'
 
 class Demo extends Component {
 	render() {
@@ -32,6 +35,22 @@ const FunctionalStoryWrapper = (component, config)=> {
 	}
 }
 
+const ClassStoryWrapper = (ClassComponent, config)=> {
+	const conf = config; 
+	return (props) => {
+		const data = {...props, ...conf};
+		return (<ClassComponent data={data} />)
+	}
+}
+
+const D3Demo2 = ClassStoryWrapper(BarChart, {
+	height: 150,
+	width: 300,
+	sleeveColor: '#323232',
+	update: () => Math.random()*100,
+	data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+})
 const D3Demo = FunctionalStoryWrapper(SimpleBarChart, {
 	height: 150,
 	width: 300,
@@ -42,7 +61,10 @@ const D3Demo = FunctionalStoryWrapper(SimpleBarChart, {
 
 
 export const demo = () => <Demo>hi again from the child</Demo>
-export const BarGraph = () => <D3Demo />
+export const ReactClassTemplate = () => <ReactClassExample />
+export const ReactFunctionTemplate = () => <ReactFunctionExample />
+export const AtomicBarGraph = () => <D3Demo />
+export const FullBarGraph = () => <D3Demo2 />
 export default {
 	title: 'D3 and React',
 	component: Button,
