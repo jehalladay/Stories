@@ -2,10 +2,11 @@ import React, { Component, Fragment, useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3'
 import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
-import {SimpleBarChart} from '../jsx/src/simple-bar-chart2.jsx'
-import {BarChart} from '../jsx/src/barchart-widget.jsx'
-import {ReactClassExample} from '../jsx/src/react-class.jsx'
-import {ReactFunctionExample} from '../jsx/src/react-function.jsx'
+import {SimpleBarChart} from '../jsx/simple-bar-chart2.jsx'
+import {BarChart} from '../jsx/barchart-widget.jsx'
+import {ReactClassExample} from '../jsx/react-class.jsx'
+import {ReactFunctionExample} from '../jsx/react-function.jsx'
+import {BarChartAxis} from '../jsx/barchart-axis.jsx'
 
 class Demo extends Component {
 	render() {
@@ -59,12 +60,37 @@ const D3Demo = FunctionalStoryWrapper(SimpleBarChart, {
 
 })
 
+const BarChartWithAxis = FunctionalStoryWrapper(BarChartAxis, {
+	data: [
+        {title: 'Title1', value: 75},   {title: 'Title2', value: 78},
+        {title: 'Title3', value: 92},   {title: 'Title4', value: 72},
+        {title: 'Title5', value: 65},   {title: 'Title6', value: 52},
+        {title: 'Title7', value: 45},   {title: 'Title8', value: 38},
+        {title: 'Title9', value: 28},   {title: 'Title10', value: 13}
+	],
+	format:{
+		title: 'Bar Chart',
+		height: 600,
+		width: 1000,
+		margin: {	  
+			top: 60,  bottom: 60,
+			left: 60, right: 60,
+			overall: 60
+		},
+		yLabel: 'Y-Axis Label',
+		xLabel: 'X-Axis Label',
+		backgroundColor: "#dddddd"
+	}
+	
+})
+
 
 export const demo = () => <Demo>hi again from the child</Demo>
 export const ReactClassTemplate = () => <ReactClassExample />
 export const ReactFunctionTemplate = () => <ReactFunctionExample />
 export const AtomicBarGraph = () => <D3Demo />
 export const FullBarGraph = () => <D3Demo2 />
+export const BarGraphWithAxis = () => <BarChartWithAxis />
 export default {
 	title: 'D3 and React',
 	component: Button,
