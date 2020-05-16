@@ -9,7 +9,7 @@ const BarChartAxis = (props) => {
 	// const [data, setData] = useState([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
     const ref = useRef();
 	const [data, setData] = useState(props.data)
-      console.log('props: ', props)
+    // console.log('props: ', props)
     const margin  = props.format.margin,
     width = props.format.width,
     height = props.format.height,
@@ -36,7 +36,7 @@ const BarChartAxis = (props) => {
             .attr('x', w/2 + margin.bottom).attr('y', h+margin.bottom*1.7)
 
 
-        const bars = chart.selectAll('rect').data(data).enter().append('rect')
+        const bars = chart.selectAll('rect').data(data).enter().append('rect').attr('fill', props.format.barColor)
             .attr('x', (d)=>xScale(d.title)).attr('y', (d)=>yScale(d.value))
             .attr('width', xScale.bandwidth()).attr('height', (d)=>h - yScale(d.value))
 

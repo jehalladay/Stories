@@ -66,11 +66,15 @@ const BarChartWithAxis = FunctionalStoryWrapper(BarChartAxis, {
         {title: 'Title3', value: 92},   {title: 'Title4', value: 72},
         {title: 'Title5', value: 65},   {title: 'Title6', value: 52},
         {title: 'Title7', value: 45},   {title: 'Title8', value: 38},
-        {title: 'Title9', value: 28},   {title: 'Title10', value: 13}
+        {title: 'Title9', value: 28},   {title: 'Title10', value: 13},
+        {title: 'Title11', value: 45},   {title: 'Title12', value: 38},
+        {title: 'Title13', value: 45},   {title: 'Titl14', value: 32},
+        {title: 'Title15', value: 45},   {title: 'Title16', value: 36},
+        {title: 'Title17', value: 45},   {title: 'Title18', value: 39},
 	],
 	format:{
-		title: 'Bar Chart',
-		height: 600,
+		title: 'Bar Chart Title',
+		height: 300,
 		width: 1000,
 		margin: {	  
 			top: 60,  bottom: 60,
@@ -79,7 +83,9 @@ const BarChartWithAxis = FunctionalStoryWrapper(BarChartAxis, {
 		},
 		yLabel: 'Y-Axis Label',
 		xLabel: 'X-Axis Label',
-		backgroundColor: "#dddddd"
+		backgroundColor: "lightblue",
+		barColor: '#b94b4f',
+		textColor: '#dddddd'
 	}
 	
 })

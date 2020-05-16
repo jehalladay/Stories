@@ -11,23 +11,6 @@ const SimpleBarChart = (props) => {
 		
 		const padding = 20;
 
-		// // create x axis
-        // const xScale = d3.scaleLinear().domain([0, width]).range([padding, width - padding]);
-		// const xAxis = d3.axisBottom(xScale).ticks(data.length);
-		// const xAxisElement = d3.select(chartArea.current).append('g')
-		// .attr('class', 'axis')
-		// .attr('transform', `translate(0, ${height-padding})`)
-		// .call(xAxis)
-		
-		
-		// // create y axis
-        // const yScale = d3.scaleLinear().domain([0, d3.max(data, (d)=>d)]).range([padding, height - padding]);
-        // const yAxis = d3.axisLeft(yScale).scale(yScale).ticks(5);
-		// const yAxisElement = d3.select(chartArea.current).append('g')
-		// 	.attr('class', 'axis')
-		// 	.attr('transform', `translate(${padding}, 0)`)
-		// 	.call(yAxis)
-		
 		// create the bars
 		const bars = d3.select(chartArea.current)
 			.selectAll('rect')  .data(data)
