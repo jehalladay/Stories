@@ -7,6 +7,9 @@ import {BarChart} from '../jsx/barchart-widget.jsx'
 import {ReactClassExample} from '../jsx/react-class.jsx'
 import {ReactFunctionExample} from '../jsx/react-function.jsx'
 import {BarChartAxis} from '../jsx/barchart-axis.jsx'
+import {BasicLineChart} from '../jsx/line-chart.jsx'
+
+
 
 class Demo extends Component {
 	render() {
@@ -91,11 +94,17 @@ const BarChartWithAxis = FunctionalStoryWrapper(BarChartAxis, {
 })
 
 
+const LineChart = FunctionalStoryWrapper(BasicLineChart, {
+
+})
+
+
 export const demo = () => <Demo>hi again from the child</Demo>
 export const ReactClassTemplate = () => <ReactClassExample />
 export const ReactFunctionTemplate = () => <ReactFunctionExample />
 export const AtomicBarGraph = () => <D3Demo />
 export const FullBarGraph = () => <D3Demo2 />
+export const SimpleLineChart = () => <LineChart />
 export const BarGraphWithAxis = () => <BarChartWithAxis />
 export default {
 	title: 'D3 and React',
