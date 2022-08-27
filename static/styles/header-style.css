@@ -1,0 +1,161 @@
+body {
+    background: #fafafa;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #000000;
+}
+
+h1 {
+    text-align: center;
+    color: #376f9e;
+}
+
+a,
+a:hover,
+a:focus {
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn {
+    background-color: #376f9e;
+    padding: 1px;
+}
+
+#resetLesson {
+    width: max-content;
+    font-size: 15px;
+    position: relative;
+    top: 20px;
+    left: 145px;
+    color: #ffffff;
+}
+
+#logo-img {
+    height:110px; 
+    width:110px; 
+    position: relative; 
+    left: 120px; 
+    top: -70px;
+}
+
+/* 
+    Sidebar style
+*/
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+.lesson-list {
+    list-style-type: none; 
+    margin: 10px; 
+    padding: 0px;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #376f9e;
+    /* color: #ffd343; */
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 10px;
+    background: #376f9e;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+} 
+
+#sidebar ul li a:hover {
+    background: #fff;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.login {
+	text-align: center;
+}
+
+.logout-button {
+    position: fixed; 
+    bottom:15px; 
+    left: 10px; 
+    font-size: 20px; 
+    list-style-type: none; 
+    margin:0px; 
+    padding:0px;
+}
+
+.report-button {
+    position: fixed; 
+    bottom:50px; 
+    left: 10px; 
+    font-size: 20px; 
+    list-style-type: none; 
+    margin:0px; 
+    padding:0px;
+}
+
+.report-button:hover {
+	background: #fff;
+}
+
+/* for dropdown lists within lessons */
+/* .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+} */
+.logout-button:hover {
+    background: #fff;
+}
+
+
+/*
+    Content style
+*/
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0s;
+}
+
+/* 
+    Mediaqueries
+*/
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

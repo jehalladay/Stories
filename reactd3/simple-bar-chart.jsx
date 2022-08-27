@@ -10,7 +10,7 @@ const SimpleBarChart = (props) => {
 	useEffect(() => {
 		
 		const padding = 20;
- 
+
 		// create the bars
 		const bars = d3.select(chartArea.current)
 			.selectAll('rect')  .data(data)
